@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<!-- Basic -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Glitche - CV/Resume/Portfolio Template</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	
+	<!-- Load Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,100,300italic,300,100italic,400italic,500,500italic,700,700italic&amp;subset=latin,cyrillic' rel='stylesheet'>
+	
+	<!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/rtl.css' %}" />
+	<link rel="stylesheet" href="{% static 'css/glitche-basic.css' %}" />
+	<link rel="stylesheet" href="{% static 'css/glitche-layout.css' %}" />
+	<link rel="stylesheet" href="{% static 'css/ionicons.css' %}" />
+	<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" />
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}" />
+
+	<!--
+		Template RTL
+	-->
+	
+	<!--
+		Template Colors
+	-->
+	{% comment %} <link rel="stylesheet" href="css/template-colors/orange.css" /> {% endcomment %}
+	<link rel="stylesheet" href="{% static 'css/template-colors/blue.css' %}" />
+	<!--<link rel="stylesheet" href="css/template-colors/green.css" />-->
+	<!--<link rel="stylesheet" href="css/template-colors/pink.css" />-->
+	<!--<link rel="stylesheet" href="css/template-colors/purple.css" />-->
+	<!--<link rel="stylesheet" href="css/template-colors/red.css" />-->
+
+	<!--
+		Template Dark
+	-->
+	<link rel="stylesheet" href="{% static 'css/template-dark/dark.css' %}" />
+
+	
+	<!--[if lt IE 9]>
+	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+	<!--
+		Favicons
+	-->
+	<link rel="shortcut icon" href="images/favicons/favicon.ico">
+	
+</head>
+<body>
+{% block content %}
+
+{% endblock content %}
+
+	<!-- jQuery Scripts -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+	<script src="{% static 'js/jquery.validate.js' %}"></script>
+	<script src="{% static 'js/typed.js' %} "></script>
+	<script src="{% static 'js/magnific-popup.js' %}"></script>
+	<script src="{% static 'js/imagesloaded.pkgd.js' %}"></script>
+	<script src="{% static 'js/isotope.pkgd.js' %}"></script>
+	
+	<!-- Main Scripts -->
+	<script src="{% static 'js/glitche-scripts.js' %}"></script>
+
+</body>
+</html>
