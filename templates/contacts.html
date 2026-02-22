@@ -11,9 +11,9 @@
 				<div class="centrize full-width">
 					<div class="vertical-center">
 						<div class="started-content">
-							<div class="h-title glitch-effect" data-text="Contacts">Contacts</div>
+							<div class="h-title glitch-effect" data-text="تماس با من">تماس با من</div>
 							<div class="h-subtitle typing-bread">
-								<p><a href="index-dark.html">Home</a> / <a href="contacts-dark.html">Contacts</a></p>
+								<p><a href="{% url "index" %}">خانه</a> / <a href="{% url "contact" %}">تماس با من</a></p>
 							</div>
 							<span class="typed-bread"></span>
 						</div>
@@ -26,47 +26,28 @@
 			<div class="section contacts">
 				<div class="content">
 					<div class="title">
-						<div class="title_inner">Contacts</div>
+						<div class="title_inner">اطلاعات تماس</div>
 					</div>
 					<div class="service-items">
 						<div class="service-item">
 							<div class="icon"><span class="ion ion-android-phone-portrait"></span></div>
-							<div class="name">Phone</div>
-							<p>
-								+ (231) 456 67 89
+							<div class="name">شماره تلفن</div>
+							<p dir='ltr'>
+								+989916828797
 							</p>
 						</div>
 						<div class="service-item">
 							<div class="icon"><span class="ion ion-email"></span></div>
-							<div class="name">Email</div>
+							<div class="name">ایمیل</div>
 							<p>
-								<a href="mailto:steve-pearson@gmail.com">steve-pearson@gmail.com</a>
+								<a href="mailto:mohammadh.khoddami@gmail.com">mohammadh.khoddami@gmail.com</a>
 							</p>
 						</div>
 						<div class="service-item">
 							<div class="icon"><span class="ion ion-ios-location"></span></div>
-							<div class="name">Address</div>
+							<div class="name">آدرس</div>
 							<p>
-								2621 W Pico Blvd, Los Angeles
-							</p>
-						</div>
-					</div>
-					<div class="contact_form">
-						<form id="cform" method="post">
-							<div class="group-val">
-								<input type="text" name="name" placeholder="Name" />
-							</div>
-							<div class="group-val">
-								<input type="text" name="email" placeholder="Email" />
-							</div>
-							<div class="group-val ct-gr">
-								<textarea name="message" placeholder="Message"></textarea>
-							</div>
-							<a href="#" class="btn fill" onclick="$('#cform').submit(); return false;" data-text="Send Message">Send Message</a>
-						</form>
-						<div class="alert-success">
-							<p>
-								Thanks, your message is sent successfully. We will contact you shortly!
+								تهران
 							</p>
 						</div>
 					</div>
