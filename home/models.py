@@ -14,3 +14,6 @@ class Article(BaseSeoModel):
         return reverse("article:article_detail", kwargs={"slug": self.slug})
 
 
+class Portfolio(BaseSeoModel):
+    content = CKEditor5Field(blank=True, null=True)
+    url = models.URLField(null=True, blank=True)
