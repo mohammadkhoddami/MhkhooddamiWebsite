@@ -2,16 +2,22 @@
 		<div class="container">
 
 <header>
-	<div class="head-top">
-		<a href="#" class="menu-btn"><span></span></a>
-		<div class="top-menu">
-			<ul>
-				<li><a href="{% url "resume" %}" class="lnk">Resume</a></li>
-				<li><a href="{% url "portfolio" %}" class="lnk">Portfolio</a></li>
-				<li><a href="{% url "blog" %}" class="lnk">Blog</a></li>
-				<li><a href="{% url "contact" %}" class="btn">Contacts</a></li>
+	<div class="head-top" style="display:flex; align-items:center; direction:ltr;">
+
+		<div class="logo">
+			<a href="/">
+				<img src="/static/img/logo.png" alt="Logo" style="height:40px;">
+			</a>
+		</div>
+
+		<div class="top-menu" style="margin-left:auto;">
+			<ul style="display:flex; gap:20px; list-style:none; margin:0; padding:0;">
+				<li><a href="{% url "resume" %}" class="lnk">رزومه</a></li>
+				<li><a href="{% url "portfolio" %}" class="lnk">پورتفولیو</a></li>
+				<li><a href="{% url "blog" %}" class="lnk">مقالات</a></li>
+				<li><a href="{% url "contact" %}" class="btn">تماس با من</a></li>
 			</ul>
 		</div>
+
 	</div>
 </header>
-

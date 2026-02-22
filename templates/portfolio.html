@@ -1,11 +1,9 @@
 {% extends "_base.html" %}
-
+ {% block title %}
+  محمد حسن خدامی | نمونه کار ها
+ {% endblock title %}
 {% block content %}
 
-<body>	
-	
-
-		
 		<!-- Wrapper -->
 		<div class="wrapper">
 		
@@ -30,10 +28,11 @@
 				<div class="content">
 					<div class="box-items portfolio-items">	
 
+						{% for portfolio in portfolios %}
 						<div class="box-item f-content">
 							<div class="image">
-								<a href="#popup-2" class="has-popup-media">
-									<img src="images/works/work3.jpg" alt="" />
+								<a href="{{ portfolio.get_absolute_url }}">
+									<img src="{{ portfolio.image.url }}" alt="{{ portfolio.title }}" />
 									<span class="info">
 										<span class="centrize full-width">
 											<span class="vertical-center">
@@ -44,25 +43,11 @@
 								</a>
 							</div>
 							<div class="desc">
-								<a href="#popup-2" class="name has-popup-media">Cardboard Box</a>
-							</div>
-							<div id="popup-2" class="popup-box mfp-fade mfp-hide">
-								<div class="content">
-									<div class="image">
-										<img src="images/works/work9.jpg" alt="">
-									</div>
-									<div class="desc">
-										<div class="category">Graphics</div>
-										<h4>Hello World Paper</h4>
-										<p>
-											Consul latine iudicabit eu vel. Cu has animal eruditi voluptatibus. Eu volumus explicari sed. Mel mutat vituperata 
-											suscipiantur et, et fabellas explicari adipiscing quo, no mucius euismod vis. Cu vim quem quod cibo.
-										</p>
-										<a href="#" class="btn" data-text="View Project">View Project</a>
-									</div>
-								</div>
+								<a href="{{ portfolio.get_absolute_url }}" class="name">{{ portfolio.title }}</a>
 							</div>
 						</div>
+						{% endfor %}
+
 					</div>
 
 					<div class="clear"></div>
@@ -70,5 +55,6 @@
 			</div>
 		
 		</div>
+		
 		
 {% endblock content %}

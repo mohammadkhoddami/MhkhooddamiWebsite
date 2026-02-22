@@ -1,0 +1,43 @@
+ {% extends "_base.html" %}
+
+ {% block content %}
+ <div class="wrapper">
+
+    <!-- Started -->
+    <div class="section started">
+      <div class="centrize full-width">
+        <div class="vertical-center">
+          <div class="started-content">
+            <div class="h-title glitch-effect" data-text="{{ portfolio.title }}">{{ portfolio.title }}</div>
+            <div class="h-subtitle typing-bread">
+              <p>
+                <a href="{% url "index" %}">خانه</a> /
+                <a href="{% url "portfolio" %}">نمونه کار ها</a> /
+                <a href="#">{{ portfolio.title }}</a>
+              </p>
+            </div>
+            <span class="typed-bread"></span>
+          </div>
+        </div>
+      </div>
+      <a href="#" class="mouse_btn"><span class="ion ion-mouse"></span></a>
+    </div>
+
+    <!-- Portfolio Detail -->
+    <div class="section works">
+      <div class="content">
+
+        <div class="portfolio-detail-content" style="direction:rtl;">
+
+          <!-- CKEditor5 rendered HTML content -->
+          <div class="portfolio-detail-body" style="line-height:1.9; color:#aaa; margin-bottom:40px;">
+            {{ portfolio.content|safe }}
+          </div>
+
+          <!-- Live URL Button -->
+          {% if portfolio.url %}
+            <a href="{{ portfolio.url }}" target="_blank" class="btn" data-text="مشاهده پروژه">مشاهده پروژه</a>
+          {% endif %}
+
+        </div>
+ {% endblock content %}

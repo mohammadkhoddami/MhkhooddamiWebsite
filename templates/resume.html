@@ -1,5 +1,9 @@
 {% extends "_base.html" %}
 	
+	{% block title %}
+	محمد حسن خدامی | نمونه کار ها
+	{% endblock title %}
+
 {% block content %}
 
 		<!-- Wrapper -->
@@ -28,11 +32,11 @@
 						<div class="title_inner">درباره ی من</div>
 					</div>
 					<div class="image">
-						<img src="images/man1.jpg" alt="محمد حسن خدامی" />
+						<img src="{{ about.image }}" alt="محمد حسن خدامی" />
 					</div>
 					<div class="desc">
 						<p>
-توسعه‌دهنده فول‌استک با تجربه در Django، React, NextJs و توسعه RestfulAPI. در طول مسیر کاری‌ام، تمرکزم بر خلق راه‌حل‌های مقیاس‌پذیر، بهینه‌سازی عملکرد سیستم‌ها، و هدایت تیم‌های فنی برای دستیابی به نتایج ملموس و باکیفیت بوده است.
+							{{ about.summary }}
 						</p>
 						<div class="info-list">
 							<ul>
@@ -43,7 +47,7 @@
 								<li><strong>ایمیل:</strong> mohammadh.khoddami@gmail.com</li>
 							</ul>
 						</div>
-						<div class="bts"><a href="#" class="btn fill" data-text="Download CV">دانلود رزومه</a></div>
+						<div class="bts"><a href="{{ about.cv.url }}" class="btn fill" data-text="Download CV">دانلود رزومه</a></div>
 					</div>
 					<div class="clear"></div>
 				</div>
@@ -55,56 +59,38 @@
 					<div class="cols">
 						<div class="col col-md">
 							<div class="title">
-								<div class="title_inner">Experience</div>
+								<div class="title_inner">تجارب کاری</div>
 							</div>
 							<div class="resume-items">
-								<div class="resume-item active">
-									<div class="date">2013 - Present</div>
-									<div class="name">Art Director - Facebook Inc</div>
-									<p>
-										Morbi nulla arcu, pellentesque sed egestas in, tempor eget felis. Nullam tincidunt augue in leo feugiat, 
-										quis interdum nisi sollicitudin.
-									</p>
-								</div>
+								{% for experience in experiences %}
+								
 								<div class="resume-item">
-									<div class="date">2011 - 2012</div>
-									<div class="name">Front-end Developer - Google Inc</div>
+									<div class="date">{{ experience.start }} - {% if experience.end %}{{ experience.end }} {% else %} Present {% endif %}</div>
+									<div class="name">{{ experience.title }}</div>
 									<p>
-										Duis ipsum ligula, feugiat nec auctor vitae, porta sit amet urna. Praesent ex lorem, porta nec aliquet eu, 
-										ullamcorper eget nibh.
+										{{ experience.summary }}
 									</p>
 								</div>
-								<div class="resume-item">
-									<div class="date">2009 - 2010</div>
-									<div class="name">Senior Developer - Abc Inc</div>
-									<p>
-										Morbi nulla arcu, pellentesque sed egestas in, tempor eget felis. Nullam tincidunt augue in leo feugiat, 
-										quis interdum nisi sollicitudin.
-									</p>
-								</div>
+								{% endfor %}
+
 							</div>
 						</div>
 						<div class="col col-md">
 							<div class="title">
-								<div class="title_inner">Education</div>
+								<div class="title_inner">تحصیلات</div>
 							</div>
 							<div class="resume-items">
+								{% for education in educations %}
+								
 								<div class="resume-item">
-									<div class="date">2007 - 2008</div>
-									<div class="name">Art University of New York</div>
+									<div class="date">{{ education.start }} - {% if education.end %}{{ education.end }} {% else %} Present {% endif %}</div>
+									<div class="name">{{ education.title }}</div>
 									<p>
-										Morbi nulla arcu, pellentesque sed egestas in, tempor eget felis. Nullam tincidunt augue in leo feugiat, quis 
-										interdum nisi sollicitudin.
+										{{ education.summary }}
 									</p>
 								</div>
-								<div class="resume-item">
-									<div class="date">2004 - 2006</div>
-									<div class="name">Front-end Course</div>
-									<p>
-										Duis ipsum ligula, feugiat nec auctor vitae, porta sit amet urna. Praesent ex lorem, porta nec aliquet eu, 
-										ullamcorper eget nibh.
-									</p>
-								</div>
+								{% endfor %}
+
 							</div>
 						</div>
 					</div>
@@ -114,46 +100,23 @@
 			<div class="section skills">
 				<div class="content">
 					<div class="title">
-						<div class="title_inner">Coding Skills</div>
+						<div class="title_inner">مهارت ها</div>
 					</div>
 					<div class="skills circles">
 						<ul>
+							{% for skill in skills %}
+							
 							<li> 
-								<div class="name">WordPress</div>
-								<div class="progress p90">
-									<div class="percentage" style="width: 90%;">
-										<span class="percent">90%</span>
+								<div class="name">{{ skill.title }}</div>
+								<div class="progress p{{ skill.percent }}">
+									<div class="percentage" style="width: {{ skill.percent }}%;">
+										<span class="percent">{{ skill.percent }}%</span>
 									</div>
-									<span>90%</span>
+									<span>{{ skill.percent }}%</span>
 								</div>
 							</li>
-							<li> 
-								<div class="name">PHP / MYSQL</div>
-								<div class="progress p75">
-									<div class="percentage" style="width: 75%;">
-										<span class="percent">75%</span>
-									</div>
-									<span>75%</span>
-								</div>
-							</li>
-							<li> 
-								<div class="name">Angular / JavaScript</div>
-								<div class="progress p85">
-									<div class="percentage" style="width: 85%;">
-										<span class="percent">85%</span>
-									</div>
-									<span>85%</span>
-								</div>
-							</li>
-							<li> 
-								<div class="name">HTML / CSS</div>
-								<div class="progress p15">
-									<div class="percentage" style="width: 95%;">
-										<span class="percent">95%</span>
-									</div>
-									<span>95%</span>
-								</div>
-							</li>
+							{% endfor %}
+
 						</ul>
 					</div>
 				</div>

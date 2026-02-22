@@ -1,13 +1,23 @@
-from django.urls import path
+from django.urls import path, re_path
 from django.views.generic import TemplateView
+
+from .views import BlogDetailView, BlogListView, ResumeView, PortfolioDetail, PortfolioList
 
 
 urlpatterns = [
     path('', TemplateView.as_view(template_name='index.html'), name='index'),
-    path('blog_inner/', TemplateView.as_view(template_name='blog_inner.html'), name='blog_detail'),
-    path('blog/', TemplateView.as_view(template_name='blog.html'), name='blog'),
-    path('resume/', TemplateView.as_view(template_name='resume.html'), name='resume'),
+    re_path(
+        r'^blog/(?P<slug>[\u0600-\u06FF0-9_-]+)/$',
+        BlogDetailView.as_view(),
+        name='blog_detail'
+    ),
+    path('blog/', BlogListView.as_view(), name='blog'),
+    path('resume/', ResumeView.as_view(), name='resume'),
     path('contact/', TemplateView.as_view(template_name='contacts.html'), name='contact'),
-    path('portfolio/', TemplateView.as_view(template_name='portfolio.html'), name='portfolio'),
-
+    path('portfolio/', PortfolioList.as_view(), name='portfolio'),
+    re_path(
+        r'^port/(?P<slug>[\w\u0600-\u06FF\-]+)/$',
+        PortfolioDetail.as_view(),
+        name='portfolio-detail'
+    ),
 ]

@@ -1,5 +1,10 @@
 {% extends "_base.html" %}
-	{% block content %}
+
+ {% block title %}
+ محمد حسن خدامی | مقالات
+ {% endblock title %}
+
+{% block content %}
 	
 			<!-- Wrapper -->
 		<div class="wrapper">
@@ -40,15 +45,13 @@
 									</span>
 								</a>
 							</div>
-							<div class="desc">
-								<div class="date">14 June 2016</div>
-								<a href="blog_inner-dark.html" class="name">Designing the perfect notification UX</a>
-							</div>
 						</div>
+						{% for article in articles %}
+						
 						<div class="box-item">
 							<div class="image">
-								<a href="blog_inner-dark.html">
-									<img src="images/works/work2.jpg" alt="" />
+								<a href="{{ article.get_absolute_url }}">
+									<img src="{{ article.image }}" alt="{{ article.alt_image }}" />
 									<span class="info">
 										<span class="centrize full-width">
 											<span class="vertical-center">
@@ -59,136 +62,11 @@
 								</a>
 							</div>
 							<div class="desc">
-								<div class="date">14 June 2016</div>
-								<a href="blog_inner-dark.html" class="name">Designing the perfect notification UX</a>
+								<div class="date">{{ article.created }}</div>
+								<a href="{{ article.get_absolute_url }}" class="name">{{ article.title }}</a>
 							</div>
 						</div>
-						<div class="box-item">
-							<div class="image">
-								<a href="blog_inner-dark.html">
-									<img src="images/works/work3.jpg" alt="" />
-									<span class="info">
-										<span class="centrize full-width">
-											<span class="vertical-center">
-												<span class="ion ion-ios-book-outline"></span>
-											</span>
-										</span>
-									</span>
-								</a>
-							</div>
-							<div class="desc">
-								<div class="date">14 June 2016</div>
-								<a href="blog_inner-dark.html" class="name">Designing the perfect notification UX</a>
-							</div>
-						</div>
-						<div class="box-item">
-							<div class="image">
-								<a href="blog_inner-dark.html">
-									<img src="images/works/work4.jpg" alt="" />
-									<span class="info">
-										<span class="centrize full-width">
-											<span class="vertical-center">
-												<span class="ion ion-ios-book-outline"></span>
-											</span>
-										</span>
-									</span>
-								</a>
-							</div>
-							<div class="desc">
-								<div class="date">14 June 2016</div>
-								<a href="blog_inner-dark.html" class="name">Designing the perfect notification UX</a>
-							</div>
-						</div>
-						<div class="box-item">
-							<div class="image">
-								<a href="blog_inner-dark.html">
-									<img src="images/works/work5.jpg" alt="" />
-									<span class="info">
-										<span class="centrize full-width">
-											<span class="vertical-center">
-												<span class="ion ion-ios-book-outline"></span>
-											</span>
-										</span>
-									</span>
-								</a>
-							</div>
-							<div class="desc">
-								<div class="date">14 June 2016</div>
-								<a href="blog_inner-dark.html" class="name">Designing the perfect notification UX</a>
-							</div>
-						</div>
-						<div class="box-item">
-							<div class="image">
-								<a href="blog_inner-dark.html">
-									<img src="images/works/work6.jpg" alt="" />
-									<span class="info">
-										<span class="centrize full-width">
-											<span class="vertical-center">
-												<span class="ion ion-ios-book-outline"></span>
-											</span>
-										</span>
-									</span>
-								</a>
-							</div>
-							<div class="desc">
-								<div class="date">14 June 2016</div>
-								<a href="blog_inner-dark.html" class="name">Designing the perfect notification UX</a>
-							</div>
-						</div>
-						<div class="box-item">
-							<div class="image">
-								<a href="blog_inner-dark.html">
-									<img src="images/works/work7.jpg" alt="" />
-									<span class="info">
-										<span class="centrize full-width">
-											<span class="vertical-center">
-												<span class="ion ion-ios-book-outline"></span>
-											</span>
-										</span>
-									</span>
-								</a>
-							</div>
-							<div class="desc">
-								<div class="date">14 June 2016</div>
-								<a href="blog_inner-dark.html" class="name">Designing the perfect notification UX</a>
-							</div>
-						</div>
-						<div class="box-item">
-							<div class="image">
-								<a href="blog_inner-dark.html">
-									<img src="images/works/work8.jpg" alt="" />
-									<span class="info">
-										<span class="centrize full-width">
-											<span class="vertical-center">
-												<span class="ion ion-ios-book-outline"></span>
-											</span>
-										</span>
-									</span>
-								</a>
-							</div>
-							<div class="desc">
-								<div class="date">14 June 2016</div>
-								<a href="blog_inner-dark.html" class="name">Designing the perfect notification UX</a>
-							</div>
-						</div>
-						<div class="box-item">
-							<div class="image">
-								<a href="blog_inner-dark.html">
-									<img src="images/works/work9.jpg" alt="" />
-									<span class="info">
-										<span class="centrize full-width">
-											<span class="vertical-center">
-												<span class="ion ion-ios-book-outline"></span>
-											</span>
-										</span>
-									</span>
-								</a>
-							</div>
-							<div class="desc">
-								<div class="date">14 June 2016</div>
-								<a href="blog_inner-dark.html" class="name">Designing the perfect notification UX</a>
-							</div>
-						</div>
+						{% endfor %}
 					</div>
 					<div class="clear"></div>
 				</div>
