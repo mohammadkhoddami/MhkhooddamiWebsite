@@ -1,7 +1,18 @@
 from django.urls import path, re_path
 from django.views.generic import TemplateView
+from django.contrib.sitemaps.views import sitemap
+from home.sitemap import ArticleSitemap, PortfolioSitemap, StaticSitemap
 
 from .views import BlogDetailView, BlogListView, ResumeView, PortfolioDetail, PortfolioList
+
+
+
+
+sitemaps = {
+    'static': StaticSitemap,
+    'articles': ArticleSitemap,
+    'portfolios': PortfolioSitemap,
+}
 
 
 urlpatterns = [
@@ -20,4 +31,6 @@ urlpatterns = [
         PortfolioDetail.as_view(),
         name='portfolio-detail'
     ),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+
 ]
