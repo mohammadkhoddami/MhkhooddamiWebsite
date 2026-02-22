@@ -1,5 +1,13 @@
  {% extends "_base.html" %}
 
+ {% block title %}
+ {{ portfolio.title }}
+ {% endblock title %}
+
+{% block meta_description %} {{ portfolio.meta_description }} {% endblock meta_description %}
+{% block og_title %} {{ portfolio.meta_title }} {% endblock og_title %}
+{% block og_image %} {{ portfolio.image.url }} {% endblock og_image %}
+
  {% block content %}
  <div class="wrapper">
 

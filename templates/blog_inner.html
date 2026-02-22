@@ -1,7 +1,25 @@
 	{% extends "_base.html" %}
+	
 	{% block title %}
 	{{ article.title }}
 	{% endblock title %}
+
+
+    <meta
+      name="description"
+      content="{% block meta_description %} {{ article.meta_description }} {% endblock meta_description %}"
+    />
+    <meta
+      property="og:title"
+      content="{% block og_title %} {{ article.meta_title }} {% endblock og_title %}"
+    />
+
+    <meta
+      property="og:image"
+      content="{% block og_image %} {{ article.image.url }} {% endblock og_image %}"
+    />
+
+
 	{% block content %}
 		
 		<!-- Wrapper -->
